@@ -9,6 +9,6 @@ matrix:
     - node_js: 12
       env: INTEGRATION=true
 script:
-  - if [ $INTEGRATION == true ]; then npm run integration; fi
+  - if [[ $INTEGRATION == true ]]; then npm run integration; fi
 before_install: npm install --global npm
 after_success: npx codecov --file=./coverage/lcov.info
